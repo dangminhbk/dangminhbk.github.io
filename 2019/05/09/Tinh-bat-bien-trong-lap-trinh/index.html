@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="Hôm nay mình sẽ nói về reduce và reducer, một hàm rất hay trong lập trình. Mình sẽ trình bày những ứng dụng của nó vào việc lập trình
+Khái niệmReducer">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Dang&#39;s Blog">
+        <meta property="og:title" content="Reduce và reducer">
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Dang&#39;s Blog</title>
+    <title>Reduce và reducer - Dang&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -135,17 +138,14 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Dang's Blog</h1>
-        
     </div>
 </header>
 
         <section class="main">
             
-                
 <div class="post">
 
-    <div class="post-header index">
+    <div class="post-header">
         <h1 class="title">
             <a href="/2019/05/09/Tinh-bat-bien-trong-lap-trinh/">
                 Reduce và reducer
@@ -160,9 +160,13 @@
         </div>
     </div>
 
-    
-        <div class="content">
-            <p>Hôm nay mình sẽ nói về reduce và reducer, một hàm rất hay trong lập trình. Mình sẽ trình bày những ứng dụng của nó vào việc lập trình</p>
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>Hôm nay mình sẽ nói về reduce và reducer, một hàm rất hay trong lập trình. Mình sẽ trình bày những ứng dụng của nó vào việc lập trình</p>
 <h1 id="Khai-niem"><a href="#Khai-niem" class="headerlink" title="Khái niệm"></a>Khái niệm</h1><p><em>Reducers là những hàm nhận vào một giá trị, sau đó trả về giá trị khác dựa trên giá trị nhập vào</em></p>
 <p>Đây là một khái niệm trong lập trình hàm, trong đó các hàm số là những pure function (không có side-effect). Reducer vì vậy ( khi áp dụng trong những ngôn ngữ tự do như javascript)  cũng nên là pure function </p>
 <p>Ví dụ :<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> increase = <span class="function"><span class="params">val</span> =&gt;</span> val+<span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
@@ -181,65 +185,20 @@
 <p>Khi muốn sửa đổi một class, ta chỉ cần sửa đổi các reducer. Các reducer nên được viết càng dễ hiểu càng tốt, và nó thậm chí còn không biết được các bên trong class có gì. </p>
 <h1 id="Ket"><a href="#Ket" class="headerlink" title="Kết"></a>Kết</h1><p>Với kiến thức hạn hẹp của mình, reduce, reducer là một cái gì đó rất cool và thú vị, nó mang lại những cách nghĩ mới, cách code mới. Hiện tại thì với reduce, nó chậm hơn đáng kể so với vòng lặp thông thường, nhưng nó khiễn code dễ đọc hơn rất nhiều và khiến cho việc kiểm soát lỗi tốt hơn.</p>
 
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/04/11/Tao-mot-thu-vien-JS/">
-                Tạo một thư viện JS
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-04-11</span>
-            
-            
-            
-        </div>
     </div>
 
     
-        <div class="content">
-            <p>Viết một thư viện, dù chỉ vài chục dòng, mang lại rất nhiều kiến thức hữu ích. Mình sẽ viết theo những hiểu biết của mình. Hi vọng các bạn sẽ có cho mình nhiều kinh nghiệm. Thư viện mình viết có chức năng rất đơn giản: Một db đơn giản với lưu FILE dạng Blob.</p>
-<h1 id="Tao-thu-muc-git"><a href="#Tao-thu-muc-git" class="headerlink" title="Tạo thư mục git"></a>Tạo thư mục git</h1><p>Đầu tiên các bạn tạo remote repostory trên git server yêu thích của bạn, trong tuts này mình sẽ dùng github</p>
-<p>Tạo git folder ở local:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init [Tên dụ án git]</span><br></pre></td></tr></table></figure>
-<p>Thêm remote cho git folder:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [Địa chỉ git remote của bạn]</span><br></pre></td></tr></table></figure></p>
-<h1 id="Cau-truc-thu-muc"><a href="#Cau-truc-thu-muc" class="headerlink" title="Cấu trúc thư mục"></a>Cấu trúc thư mục</h1><p>Thư mục src sẽ chứa code nguồn, thư mục tests để chạy test, thư mục dist sẽ chứa code release.</p>
-<h1 id="Cai-cac-depedencies"><a href="#Cai-cac-depedencies" class="headerlink" title="Cài các depedencies"></a>Cài các depedencies</h1><h1 id="Cau-hinh-webpack"><a href="#Cau-hinh-webpack" class="headerlink" title="Cấu hình webpack"></a>Cấu hình webpack</h1><p>Tạo file webpack.config.js:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-cli @webpack-cli/init</span><br><span class="line">npx webpack-cli init</span><br></pre></td></tr></table></figure></p>
-<p>Sau đó sửa lại như sau:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> libraryName = <span class="string">'mamaDB'</span>; <span class="comment">// Hoặc tên thư viện của bạn</span></span><br><span class="line"><span class="keyword">var</span> outputFile = libraryName + <span class="string">'.js'</span>;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">output: &#123;</span><br><span class="line">		path: __dirname+<span class="string">'/dist'</span>,</span><br><span class="line">		filename: outputFile,</span><br><span class="line">		library: libraryName,</span><br><span class="line">		libraryTarget: <span class="string">'umd'</span>,</span><br><span class="line">		umdNamedDefine: <span class="literal">true</span></span><br><span class="line">	&#125;,</span><br></pre></td></tr></table></figure></p>
-<h1 id="Module-hoa-code"><a href="#Module-hoa-code" class="headerlink" title="Module hóa code"></a>Module hóa code</h1><p>Đầu tiên ta có code ban đầu:</p>
-<p>Nếu các hàm có liên quan đến nhau, hoặc chỉ được gọi ở ngay tại scope đó thì nên để chung. Còn không, chia các hàm thành các file riêng. Khi import sẽ dễ đọc hơn. Một cách khác nữa để import, export nhiều từ một file là sử dụng destructuring:</p>
-<h1 id="Test-voi-mocha-va-chai"><a href="#Test-voi-mocha-va-chai" class="headerlink" title="Test với mocha và chai"></a>Test với mocha và chai</h1><p>Test là một công việc rất quan trọng và cần thiết trong lập trình. Hiện tại chúng ta ít còn phải test bằng tay do việc ra đời của các công cụ test rất mạnh mẽ. Ở đây mình sử dụng Mocha để test và Chai để assert.<br>Vì thư viện trên trình duyệt nên test trên môi trường trình duyệt (vì js trên server với trên browser có nhiều khác biệt về các API). Code test trình duyệt:</p>
-<ul>
-<li><p>HTML</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Mocha Tests<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mocha/6.1.2/mocha.min.css"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"mocha"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mocha/6.1.2/mocha.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">mocha.setup(<span class="string">'bdd'</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- load code you want to test here --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../dist/mamaDB.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> expect = chai.expect;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- load your test files here --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./test.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      mocha.run();</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>JS</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'mamaDB'</span>,()=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> db = <span class="literal">null</span>;</span><br><span class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        db = <span class="keyword">new</span> mamaDB();</span><br><span class="line">    &#125;);</span><br><span class="line">    describe(<span class="string">'after initization'</span>,()=&gt;&#123;</span><br><span class="line">        it(<span class="string">'should return an error after getItem(anykey)'</span>, ()=&gt;&#123;</span><br><span class="line">            expect(db.getItem(<span class="string">"key"</span>).message).to.equal(<span class="string">"Unable to get item"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        it(<span class="string">'should return an error after getItem(anykey) with anykey is not string'</span>,()=&gt;&#123;</span><br><span class="line">            expect(db.getItem(<span class="number">1</span>).message).to.equal(<span class="string">"Key is not a string"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    describe(<span class="string">'Test putItem function'</span>,()=&gt;&#123;</span><br><span class="line">        it(<span class="string">'should return an err if "key" is not string'</span>,()=&gt;&#123;</span><br><span class="line">            expect(db.putItem(<span class="literal">null</span>,<span class="string">"key"</span>).message).to.equal(<span class="string">"invalid type"</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        it(<span class="string">'should return an err if "key" is null'</span>,()=&gt;&#123;</span><br><span class="line">            expect(db.putItem(<span class="literal">null</span>,<span class="literal">null</span>).message).to.equal(<span class="string">"invalid type"</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        it(<span class="string">'should return an err if "file" is not a FILE'</span>,()=&gt;&#123;</span><br><span class="line">            expect(db.putItem(<span class="string">"D"</span>,<span class="string">"key"</span>).message).to.equal(<span class="string">"invalid type"</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        it(<span class="string">'should return an err if "file" is null'</span>,()=&gt;&#123;</span><br><span class="line">            expect(db.putItem(<span class="literal">null</span>,<span class="string">"key"</span>).message).to.equal(<span class="string">"invalid type"</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        it(<span class="string">'should return key if succes add to db'</span>,()=&gt;&#123;</span><br><span class="line">            expect(db.putItem(<span class="keyword">new</span> File([<span class="built_in">JSON</span>.stringify(<span class="string">"Text"</span>)],<span class="string">"ex.json"</span>),<span class="string">"key"</span>)).to.equal(<span class="string">"key"</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    describe(<span class="string">'Test getItem function'</span>,()=&gt;&#123;</span><br><span class="line">        beforeEach(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            db.putItem(db.putItem(<span class="keyword">new</span> File([<span class="built_in">JSON</span>.stringify(<span class="string">"Text"</span>)],<span class="string">"ex.json"</span>),<span class="string">"key"</span>));</span><br><span class="line">        &#125;)</span><br><span class="line">        it(<span class="string">'Should return item if valid key'</span>);</span><br><span class="line">        it(<span class="string">'Should return error if key is not string'</span>);</span><br><span class="line">        it(<span class="string">'Should return error item if key is null'</span>);</span><br><span class="line">        it(<span class="string">'Should not return item if not valid key'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>Mình sử dụng liveserver ngay trong visual studio code để tự cập nhập lại code:</p>
-<p>Hàm descbrice dùng để mô tả đoạn test. Hàm it để định nghĩa code cho các đoạn code. </p>
-<h1 id="Build-code"><a href="#Build-code" class="headerlink" title="Build code"></a>Build code</h1><h1 id="Ket"><a href="#Ket" class="headerlink" title="Kết"></a>Kết</h1>
-        </div>
+
+    
+
+    <!-- Comments -->
     
 
 </div>
-            
         </section>
+
     </div>
 </div>
-
-
-
-
 
 
 </div>
